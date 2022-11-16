@@ -1,24 +1,17 @@
 import React from 'react';
-import { useSearchParams } from 'react-router-dom';
 import * as S from '../styles';
-import { RevenueInput, SearchInput, StoresMap, StoresTable } from './';
+import { StoresInput, StoresMap, StoresTable } from './';
+import SearchIcon from '../assets/images/search.svg';
+import { useSearchParams } from 'react-router-dom';
 
 export const Main = () => {
   const [searchParams, setSearchParams] = useSearchParams({
     page: 1,
     limit: 10,
-    search: 'teste',
-    revenue: 25000,
+    search: '',
+    revenue: '',
     sort: 'name',
   });
-
-  React.useEffect(() => setSearchParams(searchParams), []);
-
-  const page = searchParams.get('page');
-  const limit = searchParams.get('limit');
-  const search = searchParams.get('search');
-  const revenue = searchParams.get('revenue');
-  const sort = searchParams.get('sort');
 
   return (
     <>
@@ -27,8 +20,21 @@ export const Main = () => {
       </S.BlueBanner>
       <S.MainContainer>
         <S.FlexContainer>
-          <SearchInput />
-          <RevenueInput />
+          <StoresInput
+            icon={<img src={SearchIcon} />}
+            label='Pesquisar por nome'
+            placeholder='Pesquise uma loja'
+            queryKey={'search'}
+            searchParams={searchParams}
+            setSearchParams={setSearchParams}
+          />
+          <StoresInput
+            label='Faturamento mínimo esperado'
+            placeholder='Digite um número'
+            queryKey={'revenue'}
+            searchParams={searchParams}
+            setSearchParams={setSearchParams}
+          />
         </S.FlexContainer>
         <S.FlexContainer>
           <StoresTable />

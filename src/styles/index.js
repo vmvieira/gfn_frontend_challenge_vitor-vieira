@@ -17,9 +17,9 @@ export const theme = {
     large: '2rem',
   },
   fontSizes: {
-    small: '0.5rem',
+    small: '0.75rem',
     medium: '1rem',
-    large: '2rem',
+    large: '1.5rem',
   },
   breakpoints: {
     desktop: '(min-width: 768px)',
@@ -58,9 +58,11 @@ export const BlueBanner = styled.div`
     margin: 0 auto;
     max-width: 1200px;
     padding: ${theme.spacing.small} ${theme.spacing.medium};
+    font-size: ${theme.fontSizes.medium};
 
     @media ${theme.breakpoints.desktop} {
       padding: ${theme.spacing.medium} ${theme.spacing.large};
+      font-size: ${theme.fontSizes.large};
     }
   }
 `;
@@ -70,11 +72,13 @@ export const MainContainer = styled.main`
   gap: ${theme.spacing.medium};
   margin: 0 auto;
   padding: ${theme.spacing.medium} ${theme.spacing.medium};
+  font-size: ${theme.fontSizes.small};
 
   @media ${theme.breakpoints.desktop} {
     max-width: 1200px;
     padding: ${theme.spacing.large} ${theme.spacing.large};
     gap: ${theme.spacing.large};
+    font-size: ${theme.fontSizes.medium};
   }
 `;
 
