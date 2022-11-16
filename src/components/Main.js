@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
+import * as S from '../styles';
+import { RevenueInput, SearchInput, StoresMap, StoresTable } from './';
 
 export const Main = () => {
   const [searchParams, setSearchParams] = useSearchParams({
@@ -19,13 +21,20 @@ export const Main = () => {
   const sort = searchParams.get('sort');
 
   return (
-    <div>
-      <h1>Hello World</h1>
-      <p>{page}</p>
-      <p>{limit}</p>
-      <p>{search}</p>
-      <p>{revenue}</p>
-      <p>{sort}</p>
-    </div>
+    <>
+      <S.BlueBanner>
+        <h1>Desempenho das Lojas</h1>
+      </S.BlueBanner>
+      <S.MainContainer>
+        <S.FlexContainer>
+          <SearchInput />
+          <RevenueInput />
+        </S.FlexContainer>
+        <S.FlexContainer>
+          <StoresTable />
+          <StoresMap />
+        </S.FlexContainer>
+      </S.MainContainer>
+    </>
   );
 };
