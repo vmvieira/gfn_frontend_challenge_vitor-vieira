@@ -1,7 +1,12 @@
 import React from 'react';
+import * as S from './styles';
+import { Main } from './components';
 
-export const App = () => (
-  <div>
-    <h1>Hello World</h1>
-  </div>
-);
+export const App = () => {
+  return (
+    <>
+      <S.GlobalStyles />
+      <Main />
+    </>
+  );
+};
