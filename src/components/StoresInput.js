@@ -52,8 +52,9 @@ const StyledInputContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing.small};
   display: flex;
-  border: 1px solid ${({ theme }) => theme.colors.gray};
+  border: 1px solid #c1c4c4;
   border-radius: ${({ theme }) => theme.spacing.small};
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 5px;
 `;
 
 const StyledInput = styled.input`
