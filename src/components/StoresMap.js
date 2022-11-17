@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const StoresMap = () => {
-  return <div>StoresMap</div>;
+  return <div style={{ flex: 1 }}>StoresMap</div>;
 };

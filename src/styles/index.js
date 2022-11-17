@@ -92,3 +92,8 @@ export const FlexContainer = styled.div`
     gap: ${theme.spacing.large};
   }
 `;
+
+export const TableContainer = styled.div`
+  display: grid;
+  flex: 1;
+`;

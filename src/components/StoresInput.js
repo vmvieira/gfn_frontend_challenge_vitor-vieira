@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useDebounce } from '../hooks';
 
 export const StoresInput = ({
+  defaultValue = '',
   label = '',
   placeholder = '',
   icon = null,
@@ -10,13 +11,17 @@ export const StoresInput = ({
   searchParams,
   setSearchParams,
 }) => {
-  const [inputValue, setInputValue] = React.useState('');
+  const [inputValue, setInputValue] = React.useState(defaultValue);
   const debouncedInputValue = useDebounce(inputValue, 500);
 
   const handleOnChange = (e) => setInputValue(e.target.value);
 
   React.useEffect(() => {
     if (debouncedInputValue) {
+      if (queryKey === 'nameSearch') {
+        searchParams.set('page', 1);
+        setSearchParams(searchParams);
+      }
       searchParams.set(queryKey, debouncedInputValue);
       setSearchParams(searchParams);
     } else {
