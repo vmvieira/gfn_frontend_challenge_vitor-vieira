@@ -106,6 +106,7 @@ const StyledFlexHeader = styled.div`
 `;
 
 const StyledImage = styled.img`
+  cursor: pointer;
   transition: all 0.3s ease-out;
   transform: ${({ rotateDown, rotateUp }) => {
     if (rotateUp) return `rotate(-90deg)`;

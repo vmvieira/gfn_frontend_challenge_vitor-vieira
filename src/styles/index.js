@@ -93,7 +93,17 @@ export const FlexContainer = styled.div`
   }
 `;
 
+export const GridContainer = styled.div`
+  display: grid;
+  gap: ${theme.spacing.small};
+
+  @media ${theme.breakpoints.desktop} {
+    grid-template-columns: 1fr 1fr;
+    gap: ${theme.spacing.large};
+  }
+`;
+
 export const TableContainer = styled.div`
   display: grid;
-  flex: 1;
+  gap: ${theme.spacing.small};
 `;

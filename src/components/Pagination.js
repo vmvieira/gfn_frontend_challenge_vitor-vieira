@@ -62,11 +62,12 @@ export const Pagination = ({ searchParams, setSearchParams, total }) => {
 };
 
 const StyledPaginationContainer = styled.nav`
-  margin: 0.75rem auto;
+  margin: 0.75rem 0;
 `;
 
 const StyledFlexContainer = styled.ol`
   display: flex;
+  justify-content: center;
   gap: ${({ theme }) => theme.spacing.small};
 `;
 

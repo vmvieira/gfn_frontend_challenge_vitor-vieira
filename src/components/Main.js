@@ -57,7 +57,7 @@ export const Main = () => {
             defaultValue={15000}
           />
         </S.FlexContainer>
-        <S.FlexContainer>
+        <S.GridContainer>
           <S.TableContainer>
             <StoresTable
               searchParams={searchParams}
@@ -72,8 +72,8 @@ export const Main = () => {
               />
             )}
           </S.TableContainer>
-          <StoresMap />
-        </S.FlexContainer>
+          <StoresMap searchParams={searchParams} data={currentSlice} />
+        </S.GridContainer>
       </S.MainContainer>
     </>
   );
