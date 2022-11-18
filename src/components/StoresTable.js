@@ -35,6 +35,7 @@ export const StoresTable = ({ searchParams, setSearchParams, data }) => {
                 rotateUp={rotateNameImgUp}
                 rotateDown={rotateNameImgDown}
                 onClick={() => handleSort(sort, 'alpha', 'reverseAlpha')}
+                alt="sortByName"
               />
             </StyledFlexHeader>
           </StyledTableHeading>
@@ -46,6 +47,7 @@ export const StoresTable = ({ searchParams, setSearchParams, data }) => {
                 rotateUp={rotateRevenueImgUp}
                 rotateDown={rotateRevenueImgDown}
                 onClick={() => handleSort(sort, 'ascRevenue', 'descRevenue')}
+                alt="sortByRevenue"
               />
             </StyledFlexHeader>
           </StyledTableHeading>
@@ -54,14 +56,9 @@ export const StoresTable = ({ searchParams, setSearchParams, data }) => {
       <tbody>
         {!!data.length &&
           data.map((eachObj) => (
-            <StyledTableRow
-              key={eachObj.name}
-              isRed={eachObj.revenue < minRevenue}
-            >
+            <StyledTableRow key={eachObj.name} isRed={eachObj.revenue < minRevenue}>
               <StyledTableCell>{eachObj.name}</StyledTableCell>
-              <StyledTableCell>
-                {currencyFormatter.format(eachObj.revenue)}
-              </StyledTableCell>
+              <StyledTableCell>{currencyFormatter.format(eachObj.revenue)}</StyledTableCell>
             </StyledTableRow>
           ))}
       </tbody>
@@ -88,8 +85,7 @@ const StyledTable = styled.table`
 
 const StyledTableRow = styled.tr`
   ${sharedStylesForTableAndTr}
-  color: ${({ theme, isRed }) =>
-    isRed ? theme.colors.red : theme.colors.black};
+  color: ${({ theme, isRed }) => (isRed ? theme.colors.red : theme.colors.black)};
 `;
 
 const StyledTableHeading = styled.th`

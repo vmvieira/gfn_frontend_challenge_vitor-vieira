@@ -1,4 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import React from 'react';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import LatoRegular from '../assets/fonts/Lato-Regular.ttf';
 
 export const theme = {
@@ -9,21 +10,21 @@ export const theme = {
     lightGray: '#c0c0c0',
     lightBlack: '#747474',
     red: '#aa3131',
-    blue: '#0080b2',
+    blue: '#0080b2'
   },
   spacing: {
     small: '0.5rem',
     medium: '1rem',
-    large: '2rem',
+    large: '2rem'
   },
   fontSizes: {
     small: '0.75rem',
     medium: '1rem',
-    large: '1.5rem',
+    large: '1.5rem'
   },
   breakpoints: {
-    desktop: '(min-width: 768px)',
-  },
+    desktop: '(min-width: 768px)'
+  }
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -49,6 +50,10 @@ body,
   font-family: 'Lato-Regular', sans-serif;
 }
 `;
+
+export const MyThemeProvider = ({ children }) => (
+  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+);
 
 export const BlueBanner = styled.div`
   background: ${theme.colors.blue};

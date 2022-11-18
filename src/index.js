@@ -6,10 +6,8 @@ import { App } from './App';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
-  },
+    element: <App />
+  }
 ]);
 
-createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
-);
+createRoot(document.getElementById('root')).render(<RouterProvider router={router} />);

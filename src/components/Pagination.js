@@ -40,22 +40,16 @@ export const Pagination = ({ searchParams, setSearchParams, total }) => {
           src={LeftIcon}
           onClick={handlePrevious}
           isNotAllowed={cantPrevious}
+          alt="previous page"
         />
         {pageNumbers.map((eachNumber) => (
           <StyledListItem key={eachNumber}>
-            <StyledButton
-              onClick={() => paginate(eachNumber)}
-              isCurrentPage={page === eachNumber}
-            >
+            <StyledButton onClick={() => paginate(eachNumber)} isCurrentPage={page === eachNumber}>
               {eachNumber}
             </StyledButton>
           </StyledListItem>
         ))}
-        <StyledImage
-          src={RightIcon}
-          onClick={handleNext}
-          isNotAllowed={cantNext}
-        />
+        <StyledImage src={RightIcon} onClick={handleNext} isNotAllowed={cantNext} alt="next page" />
       </StyledFlexContainer>
     </StyledPaginationContainer>
   );

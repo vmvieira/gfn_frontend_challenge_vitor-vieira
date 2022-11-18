@@ -9,7 +9,7 @@ export const StoresInput = ({
   icon = null,
   queryKey = undefined,
   searchParams,
-  setSearchParams,
+  setSearchParams
 }) => {
   const [inputValue, setInputValue] = React.useState(defaultValue);
   const debouncedInputValue = useDebounce(inputValue, 500);
@@ -32,9 +32,10 @@ export const StoresInput = ({
 
   return (
     <StyledContainer>
-      <label>{label}</label>
+      <label htmlFor={queryKey}>{label}</label>
       <StyledInputContainer>
         <StyledInput
+          id={queryKey}
           type={'text'}
           value={inputValue}
           onChange={handleOnChange}

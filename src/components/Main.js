@@ -14,7 +14,7 @@ export const Main = () => {
     limit: 10,
     nameSearch: '',
     minRevenue: 15000,
-    sort: '',
+    sort: ''
   });
 
   const page = searchParams.get('page');
@@ -42,15 +42,15 @@ export const Main = () => {
         <S.FlexContainer>
           <StoresInput
             icon={<img src={SearchIcon} />}
-            label='Pesquisar por nome'
-            placeholder='Pesquise uma loja'
+            label="Pesquisar por nome"
+            placeholder="Pesquise uma loja"
             queryKey={'nameSearch'}
             searchParams={searchParams}
             setSearchParams={setSearchParams}
           />
           <StoresInput
-            label='Faturamento mínimo esperado'
-            placeholder='Digite um número'
+            label="Faturamento mínimo esperado"
+            placeholder="Digite um número"
             queryKey={'minRevenue'}
             searchParams={searchParams}
             setSearchParams={setSearchParams}
