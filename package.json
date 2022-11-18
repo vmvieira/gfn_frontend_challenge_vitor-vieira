@@ -2,16 +2,13 @@
   "name": "geofusion-test",
   "version": "1.0.0",
   "description": "gfn_frontend_challenge_vitor-vieira",
-  "homepage": "http://vmvieira.github.io/gfn_frontend_challenge_vitor-vieira",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve  --hot --open --mode development",
     "build": "webpack --config webpack.config.js --mode production",
     "test": "jest",
     "lint": "eslint .",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "keywords": [],
   "author": "",
@@ -39,7 +36,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
     "file-loader": "^6.2.0",
-    "gh-pages": "^4.0.0",
     "global-jsdom": "^8.6.0",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
