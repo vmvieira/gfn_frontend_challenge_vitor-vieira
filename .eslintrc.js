@@ -6,7 +6,6 @@ module.exports = {
     'jest/globals': true
   },
   extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:jest/recommended'],
-  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
@@ -16,5 +15,10 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off'
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 };

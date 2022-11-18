@@ -31,7 +31,8 @@ export const StoresMap = ({ data, searchParams }) => {
             <Marker
               position={[eachObj.latitude, eachObj.longitude]}
               icon={eachObj.revenue < minRevenue ? redMarker : blueMarker}
-              key={eachObj.name}>
+              key={eachObj.name}
+            >
               <Popup>
                 <b>Nome:</b> {eachObj.name} <br />
                 <b>Faturamento:</b> {currencyFormatter.format(eachObj.revenue)}
